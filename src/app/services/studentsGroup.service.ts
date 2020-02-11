@@ -7,17 +7,20 @@ import { FacultyModel } from '../modules/models/faculty';
 import { CaphedraModel } from '../modules/models/cafedra';
 import { SpecialityModel } from '../modules/models/speciality';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+  })
 export class StudentsGroupService {
 
     constructor(private http: HttpClient) { }
 
-    getStudentGroupRequest(studentGroup: string): Observable<StudentTimeTableGroupModel> {
-        return this.http.get<StudentTimeTableGroupModel>('https://journal.bsuir.by/api/v1/studentGroup/schedule' + studentGroup);
+    getStudentGroupRequest(studentGroup: number): Observable<StudentTimeTableGroupModel> {
+        return this.http.get<StudentTimeTableGroupModel>('https://journal.bsuir.by/api/v1/studentGroup/schedule?studentGroup='
+        +studentGroup);
     }
 
     getTeacherSchedule(employeeId: number | string): Observable<TeacherScheduleGroupModel> {
-        return this.http.get<TeacherScheduleGroupModel>('https://journal.bsuir.by/api/v1/portal/employeeSchedule' + employeeId);
+        return this.http.get<TeacherScheduleGroupModel>('https://journal.bsuir.by/api/v1/portal/employeeSchedule'+employeeId);
     }
 
     getAllGroupsSchedule(): Observable<StudentGroupModel> {
@@ -39,4 +42,5 @@ export class StudentsGroupService {
     getAllSpecialityList(): Observable<SpecialityModel> {
         return this.http.get<SpecialityModel>('https://journal.bsuir.by/api/v1/specialities');
     }
+
  }

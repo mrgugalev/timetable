@@ -1,7 +1,29 @@
-
-<div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Выберите группу"  aria-describedby="button-addon2">
-    <div class="input-group-append">
-      <button class="btn btn-outline-secondary" (clicked)="getShedule()" type="button" id="button-addon2">поиск</button>
+<app-main-input></app-main-input>
+<div class="table">
+  <div class="row">
+    <div class="col-md-12 mx-auto">
+      <div class="md-form">
+        <input type="text" [(ngModel)]="searchText" class="form-control" id="search" placeholder="Type to search" mdbInput>
+      </div>
     </div>
   </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </tbody>
+  </table>

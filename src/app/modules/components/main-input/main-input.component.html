@@ -1,6 +1,19 @@
-<div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Выберите группу"  aria-describedby="button-addon2">
-    <div class="input-group-append">
-      <button class="btn btn-outline-secondary" type="button" id="button-addon2">поиск</button>
-    </div>
+<div class="h3">Сейчас {{this.currentWeekNumber}} учебная неделя</div>
+<div class="h4"> 
+  Начало занятий: {{this.dateStart}}
+  Конец занятий: {{this.dateEnd}}
+</div>
+<form>
+  <div class="form-group">
+    <label>поиск</label>
+    <input class="form-control" name="group" [(ngModel)] = "group" required>
   </div>
+  <div class="form-group">
+    <button class="btn btn-default" (click)="getShedule(group)">Добавить</button>
+  </div>
+</form>
+<nav>
+  <a routerLink="/main-input" routerLinkActive="inactive">mainInput</a>
+  <a routerLink="/teacherSchedule" routerLinkActive="active">roadToTeachersSchedule</a>
+</nav>
+<router-outlet></router-outlet>

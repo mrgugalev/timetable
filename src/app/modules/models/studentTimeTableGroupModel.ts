@@ -10,6 +10,8 @@ export class StudentTimeTableGroupModel {
     public tomorrowDate?: string;
     public tomorrowSchedules?: string;
     public currentWeekNumber?: number;
+    public dateStart?: string;
+    public dateEnd?: string;
 }
 
 export class StudentGroupModel {
